@@ -4,7 +4,7 @@
 <div class="grid-container">
   <div class="grid-x grid-padding-x">
       <div class="large-12 cell">
-        <h1>Hello World Template</h1>
+        <h1>Hello World</h1>
       </div>
       {% for item in climbs %}
       <div class="large-4 medium-4 small-12 cell">
@@ -19,7 +19,15 @@
 {% endif %}
 <form action="/" method="post">
     {% csrf_token %}
-    {{ form_instance }}
-    <input type="submit" class="button" value="Submit">
+    <!-- {{ form_instance }}
+    <input type="submit" class="button" value="Submit"> -->
+    <div class="grid-container">
+  <div class="grid-x grid-padding-x">
+    <div class="large-4 medium-6 small-12 cell">
+      {{ form_instance }}
+      <input type="submit" class="button" value="Submit">
+    </div>
+  </div>
+</div>
 </form>
 {% endblock %}
