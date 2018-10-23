@@ -74,6 +74,7 @@ WSGI_APPLICATION = 'climbproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+#HAVE TO UPDATE FOR CLOUD HOSTING
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
