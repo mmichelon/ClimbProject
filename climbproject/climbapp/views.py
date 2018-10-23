@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.http import JsonResponse
 # Create your views here.
 #from django.http import HttpResponse
 from . import models
@@ -35,3 +35,15 @@ def page(request, num, year):
         "page":num
         }
     return render(request, "index.html",context=context)
+
+def RestClimb(request):
+    if request.method == 'GET':
+        climbs = models.ClimbModel.objects.all()
+        list_of_climbs = []
+        for item in climbs:
+            list_of_climbs += [{
+                "climb":item.climb,
+                "id":item.id
+            }]
+        return JsonResponse(list_of_suggestions,safe=False)
+    return HttpResponse("Invalid HTTP Method")

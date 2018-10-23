@@ -1,10 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
+<h1>Climbing to the Max!</h1>
 <!-- <h1>Hello World Template</h1> -->
 <div class="grid-container">
   <div class="grid-x grid-padding-x">
       <div class="large-12 cell">
-        <h1>Hello World</h1>
+        <h3>User Climbs</h3>
       </div>
       {% for item in climbs %}
       <div class="large-4 medium-4 small-12 cell">
@@ -14,9 +16,6 @@
     </div>
 </div>
 
-{% if page %}
-<h2>Page {{ page }}</h2>
-{% endif %}
 <form action="/" method="post">
     {% csrf_token %}
     <!-- {{ form_instance }}
@@ -30,4 +29,56 @@
   </div>
 </div>
 </form>
+
+<div id="app">
+  {% verbatim %}
+  {{ message }}
+  {% endverbatim %}
+</div>
+<div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+  </span>
+</div>
+<div id="app-3">
+  <span v-if="seen">Now you see me</span>
+</div>
+ <div id="app-4">
+  <ul>
+    <li v-for="todo in todos">
+      {% verbatim %}
+      {{ todo.text }}
+      {% endverbatim %}
+    </li>
+  </ul>
+</div>
 {% endblock %}
+ {% block scripts %}
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="{% static "js/my_vue.js" %}"></script>
+
+
+<div class="card-user-profile">
+  <img class="card-user-profile-img" src="https://images.pexels.com/photos/5439/earth-space.jpg?h=350&auto=compress&cs=tinysrgb" alt="picture of space" />
+  <div class="card-user-profile-content card-section">
+    <div class="card-user-profile-avatar">
+      <img src="https://pbs.twimg.com/profile_images/422887689612820482/sZtHMJu5.png" alt="picture of yeti" />
+    </div>
+    <p class="card-user-profile-name">Abominable Snowman</p>
+    <p class="card-user-profile-status">Yeti Web Designer</p>
+    <p class="card-user-profile-info">The Yeti, once better known as the Abominable Snowman, is a mysterious bipedal creature said to live in the mountains of Asia. It sometimes leaves tracks in snow, but is also said to dwell below the Himalayan snow line.</p>
+  </div>
+
+  <div class="card-user-profile-actions">
+    <a href="#" class="card-user-profile-button button hollow">Follow</a>
+    <a href="#" class="card-user-profile-button button hollow secondary">More Info</a>
+  </div>
+</div>
+
+{% endblock %}
+
+{% if page %}
+<h2>Page {{ page }}</h2>
+{% endif %}
