@@ -1,20 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from django.http import JsonResponse
+
 # Create your views here.
 #from django.http import HttpResponse
 from . import models
 from . import forms
 
-# def index(request):
-#     # return HttpResponse("Hello, world. You're at the polls index.")
-#     if request.mehod == 'POST':
 def index(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form_instance = forms.ClimbForm(request.POST)
         if form_instance.is_valid():
-            climb = models.ClimbModel(
-                climb=form_instance.cleaned_data["climb"]
+            climbM = models.ClimbModel(
+                climb = form_instance.cleaned_data["climb"]
             )
             climb.save()
             form_instance=forms.ClimbForm()
@@ -23,7 +21,6 @@ def index(request):
     climbs = models.ClimbModel.objects.all()
     context = {
         "title":"Awesome",
-        "climbs":climbs,
         "climbs":climbs,
         "form_instance":form_instance
         }
@@ -36,7 +33,7 @@ def page(request, num, year):
         }
     return render(request, "index.html",context=context)
 
-def RestClimb(request):
+def rest_climb(request):
     if request.method == 'GET':
         climbs = models.ClimbModel.objects.all()
         list_of_climbs = []
@@ -45,5 +42,6 @@ def RestClimb(request):
                 "climb":item.climb,
                 "id":item.id
             }]
-        return JsonResponse(list_of_suggestions,safe=False)
+        # return JsonResponse(list_of_climbs,safe=False)
+        return JsonResponse({"climbs": list_of_climbs})
     return HttpResponse("Invalid HTTP Method")
