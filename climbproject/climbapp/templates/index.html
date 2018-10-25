@@ -2,13 +2,16 @@
 {% load static %}
 
 {% block content %}
-<h1>Climbing to the Max!</h1>
+<h1><a href="/"> Climbing to the Max! </a></h1>
+
 
 <!-- add nav bar -->
 <nav class="hover-underline-menu" data-menu-underline-from-center>
   <ul class="menu align-center">
-    <li><a href="#">Climbing Basics</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="information/">Climbing Basics</a></li>
     <li><a href="#">User Profile</a></li>
+    <li><a href="climbs/">Climbs</a></li>
   </ul>
 </nav>
 
@@ -17,10 +20,6 @@
       <div class="large-12 cell">
         <h3>User Climbs</h3>
       </div>
-
-      <!-- {% for item in climbs %}
-      <div class="large-4 medium-4 small-12 cell">
-        <p>{{ item.climb }}</p> -->
 
       <div id="app-4">
         <ul>
@@ -31,22 +30,24 @@
           </li>
         </ul>
       </div>
-      <!-- {% endfor %} -->
     </div>
 </div>
 
 <form action="/" method="post">
-    {% csrf_token %}
+    <!-- {% csrf_token %}
     {{ form_instance }}
-    <input type="submit" class="button" value="Submit">
-    <div class="grid-container">
-  <!-- <div class="grid-x grid-padding-x">
+    <input type="submit" class="button" value="Submit"> -->
+
+<div class="grid-container">
+  <div class="grid-x grid-padding-x">
     <div class="large-4 medium-6 small-12 cell">
+      {% csrf_token %}
       {{ form_instance }}
       <input type="submit" class="button" value="Submit">
     </div>
-  </div> -->
+  </div>
 </div>
+
 </form>
 
 {% endblock %}

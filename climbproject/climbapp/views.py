@@ -46,11 +46,29 @@ def page(request, num, year):
         }
     return render(request, "index.html", context=context)
 
-# def information(request):
-#     context = {
-#         "title": "Information",
-#         }
-#     return render(request, "information.html", context=context)
+def information(request):
+    context = {
+        "title": "Climbing Information",
+        }
+    return render(request, "information/information.html", context=context)
+
+def indoor(request):
+    context = {
+        "title": "Indoor Climbing",
+        }
+    return render(request, "information/indoor.html", context=context)
+
+def outdoor(request):
+    context = {
+        "title": "Outdoor Climbing",
+        }
+    return render(request, "information/outdoor.html", context=context)
+
+def equipment(request):
+    context = {
+        "title": "Equipment",
+        }
+    return render(request, "information/equipment.html", context=context)
 
 def rest_climb(request):
     if request.method == 'GET':

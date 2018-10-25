@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- <h1><a href="/"> Outdoor Climbing </a></h1> -->
+<h1> Outdoor Climbing </h1>
+
+<nav class="hover-underline-menu" data-menu-underline-from-center>
+  <ul class="menu align-center">
+    <li><a href="/">Home</a></li>
+    <li><a href="indoor">Indoor Climbing</a></li>
+    <li><a href="outdoor">Outdoor Climbing</a></li>
+    <li><a href="equipment">Equipment</a></li>
+  </ul>
+</nav>
+
+<div class="card-info outdoor">
+  <div class="card-info-label">
+    <div class="card-info-label-text">
+      Out
+    </div>
+  </div>
+  <div class="card-info-content">
+    <h3 class="lead"> Mad Max: Fury Road</h3>
+    <p>In a post-apocalyptic world, in which people fight to the death, Max teams up with a mysterious woman, Furiousa, to try and survive.</p>
+  </div>
+</div>
+
+{% endblock %}

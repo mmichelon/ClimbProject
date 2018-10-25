@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 class ClimbForm(forms.Form):
     climb = forms.CharField(
-        # validators=[validators.validate_slug],
         label='Climb', max_length=240
         )
 

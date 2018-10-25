@@ -1,9 +1,9 @@
 new Vue({
   el: '#app-4',
   data: {
-    return {
+  //  return {
       todos: {"climbs": []}
-    }
+    //}
     // climbs: []
   },
   mounted() {
@@ -14,6 +14,7 @@ new Vue({
       axios
       .get('/climbs/')
       .then(response => (this.todos = response.data))
+      console.log(this.todos);
     }.bind(this), 10000);
   }
 })
@@ -35,4 +36,4 @@ new Vue({
   //   clearInterval(this.timer)
   // }
 
-})
+// })
