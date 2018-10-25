@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block content %}
 <h1>Climbing to the Max!</h1>
+
+<!-- add nav bar -->
+<nav class="hover-underline-menu" data-menu-underline-from-center>
+  <ul class="menu align-center">
+    <li><a href="#">Climbing Basics</a></li>
+    <li><a href="#">User Profile</a></li>
+  </ul>
+</nav>
+
 <div class="grid-container">
   <div class="grid-x grid-padding-x">
       <div class="large-12 cell">
@@ -14,29 +24,28 @@
 
       <div id="app-4">
         <ul>
-          <li v-for="todo in climbs">
+          <li v-for="todo in todos.climbs">
             {% verbatim %}
             {{ todo.climb }}
             {% endverbatim %}
           </li>
         </ul>
       </div>
-
       <!-- {% endfor %} -->
     </div>
 </div>
 
 <form action="/" method="post">
     {% csrf_token %}
-    <!-- {{ form_instance }}
-    <input type="submit" class="button" value="Submit"> -->
+    {{ form_instance }}
+    <input type="submit" class="button" value="Submit">
     <div class="grid-container">
-  <div class="grid-x grid-padding-x">
+  <!-- <div class="grid-x grid-padding-x">
     <div class="large-4 medium-6 small-12 cell">
       {{ form_instance }}
       <input type="submit" class="button" value="Submit">
     </div>
-  </div>
+  </div> -->
 </div>
 </form>
 

@@ -11,7 +11,7 @@ def index(request):
         # create a form instance and populate it with data from the request:
         form_instance = forms.ClimbForm(request.POST)
         if form_instance.is_valid():
-            climbM = models.ClimbModel(
+            climb = models.ClimbModel(
                 climb = form_instance.cleaned_data["climb"]
             )
             climb.save()
@@ -44,7 +44,13 @@ def page(request, num, year):
         "title":"Awesome",
         "page":num
         }
-    return render(request, "index.html",context=context)
+    return render(request, "index.html", context=context)
+
+# def information(request):
+#     context = {
+#         "title": "Information",
+#         }
+#     return render(request, "information.html", context=context)
 
 def rest_climb(request):
     if request.method == 'GET':
@@ -57,4 +63,5 @@ def rest_climb(request):
             }]
         # return JsonResponse(list_of_climbs,safe=False)
         return JsonResponse({"climbs": list_of_climbs})
-    return HttpResponse("Invalid HTTP Method")
+    else:
+        return HttpResponse("Invalid HTTP Method")
