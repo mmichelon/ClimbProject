@@ -10,6 +10,38 @@
     <link rel="stylesheet" href="{% static "css/app.css" %}">
   </head>
 <body>
+
+  <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text">Climbing To the Max</li>
+          <li>
+            <a>Climbing Basics</a>
+            <ul class="menu vertical">
+              <li><a href="/information/">Climbing Basics</a></li>
+              <li><a href="#">Indoor Climbing</a></li>
+              <li><a href="#">Outdoor Climbing</a></li>
+              <li><a href="#">Equipment</a></li>
+            </ul>
+          </li>
+          <li><a href="/">Home</a></li>
+          <li><a href="information/">Climbing Basics</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          {% if user.is_authenticated %}
+          <!-- <li><a href="/accounts/">{{ user.username }}</a></li> -->
+          <li><a href="/logout/">Logout</a></li>
+          <li><a href="/logout/">Logout</a></li>
+          {% else %}
+           <!-- <li><a href="/register/">Register</a></li> -->
+          <li><a href="/login/">Log In</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
 {% block content %}
 {% endblock %}
 

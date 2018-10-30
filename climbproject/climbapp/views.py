@@ -1,11 +1,17 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.http import JsonResponse
 
+#User Authentication
+from django.contrib.auth import logout
+from django.conf import settings
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 #from django.http import HttpResponse
 from . import models
 from . import forms
 
+@login_required
 def index(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -25,6 +31,10 @@ def index(request):
         "form_instance":form_instance
         }
     return render(request, "index.html", context=context)
+
+def logout_view(request):
+    logout(request)
+    return redirect("/login/")
 
 def register(request):
     if request.method == 'POST':
@@ -71,6 +81,8 @@ def equipment(request):
     return render(request, "information/equipment.html", context=context)
 
 def rest_climb(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({"climbs":[]})
     if request.method == 'GET':
         climbs = models.ClimbModel.objects.all()
         list_of_climbs = []

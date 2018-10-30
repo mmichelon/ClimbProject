@@ -2,18 +2,9 @@
 {% load static %}
 
 {% block content %}
-<h1><a href="/"> Climbing to the Max! </a></h1>
+<body class="outdoor-bg">
 
-
-<!-- add nav bar -->
-<nav class="hover-underline-menu" data-menu-underline-from-center>
-  <ul class="menu align-center">
-    <li><a href="/">Home</a></li>
-    <li><a href="information/">Climbing Basics</a></li>
-    <li><a href="#">User Profile</a></li>
-    <li><a href="climbs/">Climbs</a></li>
-  </ul>
-</nav>
+{% if user.is_authenticated %}
 
 <div class="grid-container">
   <div class="grid-x grid-padding-x">
@@ -23,13 +14,15 @@
 
       <div id="app-4">
         <div class="grid-container">
-        <!-- <ul>
+
+        <ul>
           <li v-for="todo in todos.climbs">
             {% verbatim %}
             {{ todo.climb }}
             {% endverbatim %}
           </li>
-        </ul> -->
+        </ul>
+
         </div>
 
 
@@ -37,6 +30,9 @@
     </div>
 </div>
 
+{% endif %}
+
+{% if user.is_authenticated %}
 <form action="/" method="post">
 <div class="grid-container">
   <div class="grid-x grid-padding-x">
@@ -49,31 +45,20 @@
 </div>
 </form>
 
+{% endif %}
+
 {% endblock %}
 
  {% block scripts %}
+
+ {% if user.is_authenticated %}
 <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.js"></script>
 <script src="{% static "js/my_vue.js" %}"></script>
+{% endif %}
 
-<!--
-<div class="card-user-profile">
-  <img class="card-user-profile-img" src="https://images.pexels.com/photos/5439/earth-space.jpg?h=350&auto=compress&cs=tinysrgb" alt="picture of space" />
-  <div class="card-user-profile-content card-section">
-    <div class="card-user-profile-avatar">
-      <img src="https://pbs.twimg.com/profile_images/422887689612820482/sZtHMJu5.png" alt="picture of yeti" />
-    </div>
-    <p class="card-user-profile-name">Abominable Snowman</p>
-    <p class="card-user-profile-status">Yeti Web Designer</p>
-    <p class="card-user-profile-info">The Yeti, once better known as the Abominable Snowman, is a mysterious bipedal creature said to live in the mountains of Asia. It sometimes leaves tracks in snow, but is also said to dwell below the Himalayan snow line.</p>
-  </div>
-
-  <div class="card-user-profile-actions">
-    <a href="#" class="card-user-profile-button button hollow">Follow</a>
-    <a href="#" class="card-user-profile-button button hollow secondary">More Info</a>
-  </div>
-</div> -->
+</body>
 
 {% endblock %}
 
