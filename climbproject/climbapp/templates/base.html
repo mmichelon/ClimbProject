@@ -19,8 +19,8 @@
             <a>Climbing Basics</a>
             <ul class="menu vertical">
               <li><a href="/information/">Climbing Basics</a></li>
-              <li><a href="#">Indoor Climbing</a></li>
-              <li><a href="#">Outdoor Climbing</a></li>
+              <li><a href="/information/indoor">Indoor Climbing</a></li>
+              <li><a href="/information/outdoor">Outdoor Climbing</a></li>
               <li><a href="#">Equipment</a></li>
             </ul>
           </li>
@@ -32,7 +32,7 @@
         <ul class="menu">
           {% if user.is_authenticated %}
           <!-- <li><a href="/accounts/">{{ user.username }}</a></li> -->
-          <li><a href="/logout/">Logout</a></li>
+          <li><a href="/logout/">Account</a></li>
           <li><a href="/logout/">Logout</a></li>
           {% else %}
            <!-- <li><a href="/register/">Register</a></li> -->
