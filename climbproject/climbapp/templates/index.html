@@ -16,11 +16,11 @@
           <ul>
             <li v-for="todo in todos.climbs">
               {% verbatim %}
-              {{ todo.climb }} authored by {{ todo.author }}
+              {{ todo.climb }} authored by {{ todo.author }} on {{ todo.created_on }}
               <a v-bind:href="'/comment/'+ todo.id+'/'">comment</a>
               <ul>
                 <li v-for="comm in todo.comments">
-                  {{ comm.comment }} authored by {{ comm.author }}
+                  {{ comm.comment }} authored by {{ comm.author }} on {{ todo.created_on }}
                 </li>
               </ul>
               {% endverbatim %}

@@ -116,18 +116,20 @@ def rest_climb(request):
         list_of_climbs = []
         for item in climbs:
             # list_of_climbs += [{
-            add_to_list={
+            add_to_list = {
                 "climb":item.climb,
                 "author":item.author.username,
                 "id":item.id,
+                "created_on":item.creation_date,
                 "comments":[]
             }
             comment_query = models.CommentModel.objects.filter(climb=item)
             for comm in comment_query:
-                add_to_list["comments"]+=[{
+                add_to_list["comments"] += [{
                     "comment":comm.comment,
                     "id":comm.id,
-                    "author":comm.author.username
+                    "author":comm.author.username,
+                    "created_on":comm.creation_date
                 }]
             list_of_climbs += [add_to_list]
         # return JsonResponse(list_of_climbs,safe=False)
