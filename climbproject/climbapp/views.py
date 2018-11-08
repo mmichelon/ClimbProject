@@ -13,6 +13,7 @@ from . import forms
 
 @login_required
 def index(request):
+    # comm_form = forms.CommentForm()
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form_instance = forms.ClimbForm(request.POST)
@@ -32,11 +33,13 @@ def index(request):
         "title":"Climb to the Max",
         "climbs":climbs,
         "form_instance":form_instance
+        # "comm_form":comm_form
         }
     return render(request, "index.html", context=context)
 
 @login_required
 def comment_view(request, climb_id):
+    comm_form = forms.CommentForm()
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form_instance = forms.CommentForm(request.POST)

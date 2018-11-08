@@ -2,8 +2,7 @@
 {% load static %}
 
 {% block content %}
-<body class="outdoor-bg">
-
+<!-- <body class="outdoor-bg"> -->
 {% if user.is_authenticated %}
 
 <div class="grid-container">
@@ -16,11 +15,11 @@
           <ul>
             <li v-for="todo in todos.climbs">
               {% verbatim %}
-              {{ todo.climb }} authored by {{ todo.author }} on {{ todo.created_on }}
+              {{ todo.climb }} climbed by {{ todo.author }} on {{ todo.created_on }}
               <a v-bind:href="'/comment/'+ todo.id+'/'">comment</a>
               <ul>
                 <li v-for="comm in todo.comments">
-                  {{ comm.comment }} authored by {{ comm.author }} on {{ todo.created_on }}
+                  {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
                 </li>
               </ul>
               {% endverbatim %}
@@ -29,8 +28,8 @@
       </div>
     </div>
 </div>
-
 {% endif %}
+
 
 {% if user.is_authenticated %}
 <form action="/" method="post">
@@ -44,7 +43,6 @@
   </div>
 </div>
 </form>
-
 {% endif %}
 
 {% endblock %}
@@ -58,10 +56,6 @@
 <script src="{% static "js/my_vue.js" %}"></script>
 {% endif %}
 
-</body>
+<!-- </body> -->
 
 {% endblock %}
-
-{% if page %}
-<h2>Page {{ page }}</h2>
-{% endif %}
