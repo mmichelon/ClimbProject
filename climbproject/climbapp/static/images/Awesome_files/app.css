@@ -9,19 +9,15 @@ body.information {
 .opacity-item{
   opacity: 0.75;
 }
-
-/* Create two equal columns that floats next to each other */
-.column {
+.divLeft {
+    width:100px;
+    display:block;
     float: left;
-    width: 50%;
-    padding: 10px;
 }
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.divRight {
+    width:100px;
+    display:block;
+    float: right;
 }
 
 /* Used for nav bar */

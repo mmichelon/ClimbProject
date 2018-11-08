@@ -7,6 +7,11 @@ class ClimbForm(forms.Form):
         label='Climb', max_length=240
         )
 
+class CommentForm(forms.Form):
+    comment = forms.CharField(
+        label='Comment', max_length=240
+        )
+
 #get new user
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(
