@@ -13,20 +13,19 @@
       </div>
 
       <div id="app-4">
-        <div class="grid-container card-info outdoor">
-
-        <ul>
-          <li v-for="todo in todos.climbs">
-            {% verbatim %}
-            {{ todo.climb }} authored by {{ todo.author }}
-            {% endverbatim %}
-            <a href="/comment/">comment</a>
-          </li>
-        </ul>
-
-        </div>
-
-
+          <ul>
+            <li v-for="todo in todos.climbs">
+              {% verbatim %}
+              {{ todo.climb }} authored by {{ todo.author }}
+              <a v-bind:href="'/comment/'+ todo.id+'/'">comment</a>
+              <ul>
+                <li v-for="comm in todo.comments">
+                  {{ comm.comment }} authored by {{ comm.author }}
+                </li>
+              </ul>
+              {% endverbatim %}
+            </li>
+          </ul>
       </div>
     </div>
 </div>

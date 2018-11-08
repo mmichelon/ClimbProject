@@ -11,7 +11,8 @@ urlpatterns = [
     path('information/indoor', views.indoor), #add information about climbing page
     path('information/equipment', views.equipment),
 
-    path('comment/', views.comment_view),
+    path('comment/<int:climb_id>/', views.comment_view),
+
 
     #User Authentication
     path('register/', views.register),
