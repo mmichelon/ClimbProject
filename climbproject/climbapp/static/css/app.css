@@ -7,7 +7,17 @@ body.information {
   background-size: cover;
 }
 .opacity-item{
-  opacity: 0.75;  
+  opacity: 0.75;
+}
+.divLeft {
+    width:100px;
+    display:block;
+    float: left;
+}
+.divRight {
+    width:100px;
+    display:block;
+    float: right;
 }
 
 /* Used for nav bar */

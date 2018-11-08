@@ -26,7 +26,7 @@ def index(request):
         form_instance = forms.ClimbForm()
     climbs = models.ClimbModel.objects.all()
     context = {
-        "title":"Awesome",
+        "title":"Climb to the Max",
         "climbs":climbs,
         "form_instance":form_instance
         }
@@ -48,13 +48,6 @@ def register(request):
         "form":registration_form
         }
     return render(request, "registration/register.html", context=context)
-
-def page(request, num, year):
-    context = {
-        "title":"Awesome",
-        "page":num
-        }
-    return render(request, "index.html", context=context)
 
 def information(request):
     context = {
