@@ -18,7 +18,7 @@
         <ul>
           <li v-for="todo in todos.climbs">
             {% verbatim %}
-            {{ todo.climb }}
+            {{ todo.climb }} authored by {{ todo.author }}
             {% endverbatim %}
           </li>
         </ul>

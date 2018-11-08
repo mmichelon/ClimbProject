@@ -17,11 +17,21 @@ def index(request):
         # create a form instance and populate it with data from the request:
         form_instance = forms.ClimbForm(request.POST)
         if form_instance.is_valid():
-            climb = models.ClimbModel(
-                climb = form_instance.cleaned_data["climb"]
-            )
-            climb.save()
-            form_instance=forms.ClimbForm()
+
+            # climb = models.ClimbModel(
+            #     climb = form_instance.cleaned_data["climb"]
+            # )
+            # climb.save()
+            # form_instance=forms.ClimbForm()
+
+            if request.user.is_authenticated:
+                climb = models.ClimbModel(
+                    climb = form_instance.cleaned_data["climb"],
+                    author = request.user
+                )
+                climb.save()
+                form_instance = forms.ClimbForm()
+
     else:
         form_instance = forms.ClimbForm()
     climbs = models.ClimbModel.objects.all()
@@ -48,6 +58,12 @@ def register(request):
         "form":registration_form
         }
     return render(request, "registration/register.html", context=context)
+
+def account(request):
+    context = {
+        "title": "Account",
+        }
+    return render(request, "registration/account.html", context=context)
 
 def information(request):
     context = {
@@ -82,6 +98,7 @@ def rest_climb(request):
         for item in climbs:
             list_of_climbs += [{
                 "climb":item.climb,
+                "author":item.author.username,
                 "id":item.id
             }]
         # return JsonResponse(list_of_climbs,safe=False)
