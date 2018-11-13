@@ -12,19 +12,21 @@
       </div>
 
       <div id="app-4">
-          <ul>
-            <li v-for="todo in todos.climbs">
+          <!-- <ul> -->
+            <div v-for="todo in todos.climbs">
               {% verbatim %}
               {{ todo.climb }} climbed by {{ todo.author }} on {{ todo.created_on }}
               <a v-bind:href="'/comment/'+ todo.id+'/'">comment</a>
-              <ul>
-                <li v-for="comm in todo.comments">
+              <!-- <ul>
+                <li v-for="comm in todo.comments"> -->
                   {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
-                </li>
-              </ul>
+                  </div>
+
+                <!-- </li>
+              </ul> -->
               {% endverbatim %}
-            </li>
-          </ul>
+            <!-- </li>
+          </ul> -->
       </div>
     </div>
 </div>

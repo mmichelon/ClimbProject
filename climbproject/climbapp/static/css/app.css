@@ -6,6 +6,10 @@ body.information {
   background-image: url("http://ultimatecycler.us/wp-content/uploads/2018/07/el-capitan-wallpapers-for-ipad-7.jpg");
   background-size: cover;
 }
+.indoor-bg{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/7a/Climbing_Wall_%2813517015133%29.jpg");
+  background-size: cover;
+}
 .opacity-item{
   opacity: 0.75;
 }

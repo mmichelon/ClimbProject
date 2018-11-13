@@ -3,40 +3,30 @@
 
 {% block content %}
 
+<body class="indoor-bg">
+
+<h2> Climbing Equipment </h2>
 <div class="row large-4 medium-6 small-12 cell">
+  <div class="card-info outdoor">
+    <h4>Indoor Climbing Equipment</h4>
+    <div class="card-info column">
+      <p>Climbing Shoe</p>
+      <td> <img src="{% static "/images/climbing_shoe.jpg" %}" style="width:256px; height:256px;"> </td>
+    </div>
+    <div class="card-info column">
+      <p>Chalk Bag/Boulder Bag</p>
+      <td> <img src="{% static "/images/chalk_bag.jpg" %}" style="width:256px; height:256px;"> </td>
+    </div>
   <div class="card-info column">
-    <p> Capitan Crunch</p>
-    <img src="https://img2.wikia.nocookie.net/__cb20090309234126/starwars/images/e/ee/DeathStar2.jpg" alt="death star" />
-    <img src="https://img2.wikia.nocookie.net/__cb20090309234126/starwars/images/e/ee/DeathStar2.jpg" alt="death star" />
+    <p>Climbing Harness</p>
+    <td> <img src="{% static "/images/harness.jpg" %}" style="width:256px; height:256px;"> </td>
   </div>
-  <div class="card-info column">
-    <p>The holy guy</p>
-    <img src="https://img2.wikia.nocookie.net/__cb20090309234126/starwars/images/e/ee/DeathStar2.jpg" alt="death star" />
+
   </div>
 </div>
 
-<div class="card-info">
-  <div class="row">
-    <div class="column" style="background-color:#aaa;">
-      <h2>Column 1</h2>
-      <p>Some text..</p>
-    </div>
-    <div class="column" style="background-color:#bbb;">
-      <h2>Column 2</h2>
-      <p>Some text..</p>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="column" style="background-color:#ccc;">
-      <h2>Column 3</h2>
-      <p>Some text..</p>
-    </div>
-    <div class="column" style="background-color:#ddd;">
-      <h2>Column 4</h2>
-      <p>Some text..</p>
-    </div>
-  </div>
-</div>
+
+</body>
 
 {% endblock %}
