@@ -21,6 +21,7 @@ def index(request):
             if request.user.is_authenticated:
                 climb = models.ClimbModel(
                     climb = form_instance.cleaned_data["climb"],
+                    difficulty = form_instance.cleaned_data["difficulty"],
                     author = request.user
                 )
                 climb.save()
@@ -121,6 +122,7 @@ def rest_climb(request):
             # list_of_climbs += [{
             add_to_list = {
                 "climb":item.climb,
+                "difficulty":item.difficulty,
                 "author":item.author.username,
                 "id":item.id,
                 "created_on":item.creation_date,

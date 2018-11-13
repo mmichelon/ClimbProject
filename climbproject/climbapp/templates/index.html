@@ -15,6 +15,9 @@
             <div class="card-info" v-for="todo in todos.climbs">
               {% verbatim %}
               {{ todo.climb }} climbed by {{ todo.author }} on {{ todo.created_on }}
+              <br>
+              &emsp;
+              Difficulty: {{ todo.difficulty }}
               <a v-bind:href="'/comment/'+ todo.id+'/'">comment</a>
               <div>
                 <div v-for="comm in todo.comments">
@@ -50,7 +53,8 @@
 
 {% if user.is_authenticated %}
 <form action="/" method="post">
-<div class="grid-container">
+<div class="grid-container large-4 medium-6 small-12 cell card-info">
+  <p>New Climb: </p>
   <div class="grid-x grid-padding-x">
     <div class="large-4 medium-6 small-12 cell">
       {% csrf_token %}

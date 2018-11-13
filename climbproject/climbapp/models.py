@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class ClimbModel(models.Model):
     climb = models.CharField(max_length=240)
+    difficulty = models.CharField(max_length=10)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     creation_date = models.DateTimeField(auto_now_add=True)
 

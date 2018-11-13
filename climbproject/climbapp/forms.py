@@ -6,6 +6,9 @@ class ClimbForm(forms.Form):
     climb = forms.CharField(
         label='Climb', max_length=240
         )
+    difficulty = forms.CharField(
+        label='Difficulty', max_length=10
+    )
 
 class CommentForm(forms.Form):
     comment = forms.CharField(
