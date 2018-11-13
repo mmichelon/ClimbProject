@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-<!-- <body class="outdoor-bg"> -->
 {% if user.is_authenticated %}
 
 <div class="grid-container">
@@ -11,22 +10,38 @@
         <h3>User Climbs</h3>
       </div>
 
-      <div id="app-4">
-          <!-- <ul> -->
+      <div class="large-8 medium-8 small-12 large-offset-1 medium-offset-1" id="app-4">
+          <div>
+            <div class="card-info" v-for="todo in todos.climbs">
+              {% verbatim %}
+              {{ todo.climb }} climbed by {{ todo.author }} on {{ todo.created_on }}
+              <a v-bind:href="'/comment/'+ todo.id+'/'">comment</a>
+              <div>
+                <div v-for="comm in todo.comments">
+                  {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
+                  </div>
+                </div>
+              </div>
+              {% endverbatim %}
+            </div>
+          </div>
+
+      <!-- <div id="app-4">
+          <ul>
             <div v-for="todo in todos.climbs">
               {% verbatim %}
               {{ todo.climb }} climbed by {{ todo.author }} on {{ todo.created_on }}
               <a v-bind:href="'/comment/'+ todo.id+'/'">comment</a>
-              <!-- <ul>
-                <li v-for="comm in todo.comments"> -->
+              <ul>
+                <li v-for="comm in todo.comments">
                   {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
                   </div>
-
-                <!-- </li>
-              </ul> -->
+                </li>
+              </ul>
               {% endverbatim %}
-            <!-- </li>
+            </li>
           </ul> -->
+
       </div>
     </div>
 </div>
@@ -58,6 +73,5 @@
 <script src="{% static "js/my_vue.js" %}"></script>
 {% endif %}
 
-<!-- </body> -->
 
 {% endblock %}
