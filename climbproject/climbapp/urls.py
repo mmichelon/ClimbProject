@@ -13,6 +13,8 @@ urlpatterns = [
 
     path('comment/<int:climb_id>/', views.comment_view),
 
+    path('live_chat/', views.live_chat),
+
 
     #User Authentication
     path('register/', views.register),

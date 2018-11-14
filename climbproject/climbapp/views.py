@@ -115,6 +115,13 @@ def equipment(request):
         }
     return render(request, "information/equipment.html", context=context)
 
+def live_chat(request):
+    if request.user.is_authenticated:
+        context = {
+            "title": "Live Chat",
+            }
+        return render(request, "live_chat.html", context=context)
+
 def rest_climb(request):
     if not request.user.is_authenticated:
         return JsonResponse({"climbs":[]})
