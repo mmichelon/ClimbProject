@@ -14,11 +14,20 @@
           <div>
             <div class="card-info" v-for="todo in todos.climbs">
               {% verbatim %}
-              {{ todo.climb }} climbed by {{ todo.author }} on {{ todo.created_on }}
+              Name/Location: {{ todo.climb }} climbed by {{ todo.author }} on {{ todo.created_on }}
               <br>
               &emsp;
               Difficulty: {{ todo.difficulty }}
-              <a v-bind:href="'/comment/'+ todo.id+'/'">comment</a>
+              <br>
+              &emsp;
+              Indoor Or Outdoor: {{ todo.in_or_out }}
+
+              <!-- {% for radio in myform.beatles %}
+              <div class="myradio">
+                {{ radio }}
+              </div>
+              {% endfor %} -->
+
               <div>
                 <div v-for="comm in todo.comments">
                   {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
@@ -28,22 +37,6 @@
               {% endverbatim %}
             </div>
           </div>
-
-      <!-- <div id="app-4">
-          <ul>
-            <div v-for="todo in todos.climbs">
-              {% verbatim %}
-              {{ todo.climb }} climbed by {{ todo.author }} on {{ todo.created_on }}
-              <a v-bind:href="'/comment/'+ todo.id+'/'">comment</a>
-              <ul>
-                <li v-for="comm in todo.comments">
-                  {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
-                  </div>
-                </li>
-              </ul>
-              {% endverbatim %}
-            </li>
-          </ul> -->
 
       </div>
     </div>

@@ -22,6 +22,9 @@ def index(request):
                 climb = models.ClimbModel(
                     climb = form_instance.cleaned_data["climb"],
                     difficulty = form_instance.cleaned_data["difficulty"],
+
+                    in_or_out = form_instance.cleaned_data["in_or_out"],
+
                     author = request.user
                 )
                 climb.save()
