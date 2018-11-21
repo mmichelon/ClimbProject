@@ -8,7 +8,6 @@ urlpatterns = [
     path('climbs/', views.rest_climb),
     path('information/', views.information), #add information about climbing page
     path('information/outdoor', views.outdoor), #add information about climbing page
-    path('information/indoor', views.indoor), #add information about climbing page
     path('information/equipment', views.equipment),
 
     path('comment/<int:climb_id>/', views.comment_view),

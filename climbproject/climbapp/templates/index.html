@@ -2,51 +2,6 @@
 {% load static %}
 
 {% block content %}
-{% if user.is_authenticated %}
-
-<div class="grid-container">
-  <div class="grid-x grid-padding-x">
-      <div class="large-12 cell">
-        <h3>User Climbs</h3>
-      </div>
-
-      <div class="large-8 medium-8 small-12 large-offset-1 medium-offset-1" id="app-4">
-          <div>
-            <div class="card-info" v-for="todo in todos.climbs">
-              {% verbatim %}
-              Name/Location: {{ todo.climb }}
-              <br>
-              &emsp;
-              Difficulty: {{ todo.difficulty }}
-              <br>
-              &emsp;
-              Indoor Or Outdoor: {{ todo.in_or_out }}
-
-              &emsp;
-              &emsp;
-              climbed by {{ todo.author }} on {{ todo.created_on }}
-
-              <!-- {% for radio in myform.beatles %}
-              <div class="myradio">
-                {{ radio }}
-              </div>
-              {% endfor %} -->
-
-              <div>
-                <div v-for="comm in todo.comments">
-                  {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
-                  </div>
-                </div>
-              </div>
-              {% endverbatim %}
-            </div>
-          </div>
-
-      </div>
-    </div>
-</div>
-{% endif %}
-
 
 {% if user.is_authenticated %}
 <form action="/" method="post">
@@ -56,11 +11,68 @@
     <div class="large-4 medium-6 small-12 cell">
       {% csrf_token %}
       {{ form_instance }}
+      <br>
       <input type="submit" class="button" value="Submit">
     </div>
   </div>
 </div>
 </form>
+{% endif %}
+
+{% if user.is_authenticated %}
+
+<button onclick="myFunction('Harry Potter','Wizard')">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(name,job) {
+    document.getElementById("demo").innerHTML =
+    "Welcome " + name + ", the " + job + ".";
+}
+</script>
+
+<div class="grid-container">
+  <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <h3>User Climbs</h3>
+      </div>
+
+      <div class="large-8 medium-8 small-12 large-offset-1 medium-offset-1" id="app-4">
+            <div class="card-info" v-for="todo in todos.climbs">
+              {% verbatim %}
+              Name/Location: {{ todo.climb }}
+              <br>
+              &emsp;
+              Difficulty: {{ todo.difficulty }}
+              <br>
+              &emsp;
+
+
+              <!-- Check if Outdoor Climbing {{ todo.outdoor_bool }} -->
+              <p id="demo"></p>
+
+              &emsp;
+              &emsp;
+              <br>
+
+              <div class="card-info comment-div button">
+                <a v-bind:href="'/comment/'+ todo.id+'/'">Comment</a>
+              </div>
+
+              Climbed by {{ todo.author }} on {{ todo.created_on }}
+
+
+              <div class="card-info" v-for="comm in todo.comments">
+                {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
+                </div>
+              </div>
+            {% endverbatim %}
+          </div>
+
+      </div>
+    </div>
+</div>
 {% endif %}
 
 {% endblock %}

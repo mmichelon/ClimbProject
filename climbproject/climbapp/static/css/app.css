@@ -13,6 +13,16 @@ body.information {
 .opacity-item{
   opacity: 0.75;
 }
+.comment-div{
+  margin-left: auto;
+  margin-right: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
 
 /* Create two equal columns that floats next to each other */
 .column {
