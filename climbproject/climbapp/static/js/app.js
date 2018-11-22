@@ -19,3 +19,16 @@ function inOrOut(boolValCheck) {
     "Outdoor"
   }
 }
+
+// Comment feedback
+function checkComment() {
+  if(boolValCheck == true){
+    document.getElementById("demo").innerHTML =
+    "Indoor"
+    // document.getElementById("demo").innerHTML =
+    // "Welcome " + name + ", the " + job + ".";
+  }else{
+    document.getElementById("demo").innerHTML =
+    "Outdoor"
+  }
+}

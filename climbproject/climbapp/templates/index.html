@@ -4,19 +4,22 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<form action="/" method="post">
-<div class="grid-container large-4 medium-6 small-12 cell card-info">
-  <p>New Climb: </p>
-  <div class="grid-x grid-padding-x">
-    <div class="large-4 medium-6 small-12 cell">
-      {% csrf_token %}
-      {{ form_instance }}
-      <br>
-      <input type="submit" class="button" value="Submit">
+<div class="grid-container">
+  <form action="/" method="post">
+  <div class="large-4 medium-6 small-12 large-offset-1 medium-offset-1 cell card-info">
+    <p>New Climb: </p>
+    <div class="grid-x grid-padding-x">
+      <div class="large-4 medium-6 small-12 cell">
+        {% csrf_token %}
+        {{ form_instance }}
+        <br>
+        <input type="submit" class="button" value="Submit">
+      </div>
     </div>
   </div>
+  </form>
 </div>
-</form>
+
 {% endif %}
 
 {% if user.is_authenticated %}
@@ -44,16 +47,19 @@
               <div class="card-info comment-div button">
                 <a v-bind:href="'/comment/'+ todo.id+'/'">Comment</a>
               </div>
+              &emsp;
+              &emsp;
 
               Climbed by {{ todo.author }} on {{ todo.created_on }}
 
-
+              <br>
+              <h3><u>Comments</u></h3>
               <div class="card-info" v-for="comm in todo.comments">
                 {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
-                </div>
               </div>
-            {% endverbatim %}
-          </div>
+            </div>
+          {% endverbatim %}
+        </div>
 
       </div>
     </div>

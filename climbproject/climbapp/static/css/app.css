@@ -1,4 +1,11 @@
 /* Format for general pages */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 body.information {
   background-image: url("https://media.idownloadblog.com/wp-content/uploads/2015/06/Wallpaper-OS-X-El-Capitan-iPhone-6-Plus.jpg");
 }
@@ -9,6 +16,9 @@ body.information {
 .indoor-bg{
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/7a/Climbing_Wall_%2813517015133%29.jpg");
   background-size: cover;
+}
+.grey-bg {
+  background-color: #787878;
 }
 .opacity-item{
   opacity: 0.75;
@@ -24,6 +34,36 @@ img {
     width: auto\9; /* ie8 */
 }
 
+/* Used for equipment page*/
+.featured-image-block-grid-header {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featured-image-block {
+
+  margin-bottom: 20px;
+
+  .featured-image-block-title {
+    font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1em;
+    color: #404040;
+  }
+
+  a:hover {
+    p {
+      color: map-get($foundation-palette, primary);
+    }
+  }
+}
+
+
+
+
+
 /* Create two equal columns that floats next to each other */
 .column {
     float: left;
@@ -31,7 +71,6 @@ img {
     padding: 10px;
 }
 
-/* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;

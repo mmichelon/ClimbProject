@@ -2,27 +2,27 @@
 {% load static %}
 
 {% block content %}
-
+<body class="grey-bg">
 <h2> Climbing Equipment </h2>
-<div class="row large-4 medium-6 small-12 cell indoor-bg">
-  <div class="card-info outdoor"">
+<div class="grid-container indoor-bg">
+  <div class="large-2 medium-4 small-8 card-info outdoor">
     <h2>Indoor Climbing Equipment</h2>
     <p>Essential Bouldering gear for Indoor and Outdoor climbing.</p>
-    <div class="card-info column">
+    <div class="large-2 medium-4 small-8 card-info column">
       <p>Climbing Shoe</p>
-      <td> <img src="{% static "/images/climbing_shoe.jpg" %}" style="width:256px; height:256px;"> </td>
+      <td> <img src="{% static "/images/climbing_shoe.jpg" %}" style="width:256px; height:256px;" class="center"> </td>
     </div>
-    <div class="card-info column">
+    <div class="large-2 medium-4 small-8 card-info column">
       <p>Chalk Bag/Boulder Bag</p>
       <td> <img src="{% static "/images/chalk_bag.jpg" %}" style="width:192px; height:256px;"> </td>
       <td> <img src="{% static "/images/chalk_bag.jpg" %}" style="width:192px; height:256px;"> </td>
     </div>
       <p>Toprope/Lead climbing indoors</p>
-    <div class="card-info column">
+    <div class="large-2 medium-4 small-8 card-info column">
       <p>Climbing Harness</p>
-      <td> <img src="{% static "/images/harness.jpg" %}" style="width:256px; height:256px;"> </td>
+      <td> <img src="{% static "/images/harness.jpg" %}" style="width:256px; height:256px;" class="center"> </td>
     </div>
-    <div class="card-info column">
+    <div class="large-2 medium-4 small-8 card-info column">
       <p>Belay Device Or Gregory</p>
       <td> <img src="{% static "/images/baley.jpeg" %}" style="width:192px; height:256px;"> </td>
       <td> <img src="{% static "/images/gregory.jpg" %}" style="width:192px; height:256px;"> </td>
@@ -30,23 +30,46 @@
   </div>
 </div>
 
-<div class="row large-4 medium-6 small-12 cell elcap-bg">
-  <div class="card-info outdoor"">
+<div class="grid-container outdoor elcap-bg">
+  <div class="large-4 medium-4 small-8 card-info outdoor"">
     <h2>Outdoor Climbing Equipment</h2>
     <p>All indoor climbing equipment is also used outdoors, however additional gear is needed to climb safley outdoors.</p>
-    <div class="card-info column">
-      <p>Climbing Shoe</p>
-      <td> <img src="{% static "/images/climbing_shoe.jpg" %}" style="width:256px; height:256px;"> </td>
+    <div class="large-2 medium-4 small-8 card-info column">
+      <p>Climbing Helmet</p>
+      <td> <img src="https://www.rei.com/content/dam/images/Expert%20Advice/2016/06/831117_Climbing_Helmet.jpg" style="width:256px; height:256px;" class="center"> </td>
     </div>
-    <div class="card-info column">
-      <p>Chalk Bag/Boulder Bag</p>
-      <td> <img src="{% static "/images/chalk_bag.jpg" %}" style="width:256px; height:256px;"> </td>
+    <div class="large-2 medium-4 small-8 card-info column">
+      <p>Carabiners</p>
+      <td> <img src="https://www.rei.com/content/dam/images/Expert%20Advice/2016/06/899072_Locking_Carabiner.jpg" %}" style="width:192px; height:256px;"> </td>
+      <td> <img src="{% static "/images/carabinerAL.jpeg" %}" style="width:192px; height:256px;"> </td>
     </div>
-    <div class="card-info column">
-      <p>Climbing Harness</p>
-      <td> <img src="{% static "/images/harness.jpg" %}" style="width:256px; height:256px;"> </td>
+    <div class="large-2 medium-4 small-8 card-info column">
+      <p>Climbing Rope</p>
+      <td> <img src="{% static "/images/rope.jpeg" %}" style="width:256px; height:256px;" class="center"> </td>
+    </div>
+    <div class="large-2 medium-4 small-8 card-info column">
+      <p>Cam</p>
+      <td> <img src="{% static "/images/cam-bulk.jpg" %}" style="width:192px; height:256px;"> </td>
+      <td> <img src="{% static "/images/cam-crack.jpg" %}" style="width:192px; height:256px;"> </td>
+    </div>
+    <div class="large-2 medium-4 small-8 card-info column">
+      <p>Nut</p>
+      <td> <img src="{% static "/images/nuts-bulk.jpg" %}" style="width:192px; height:256px;"> </td>
+      <td> <img src="{% static "/images/nut-crack.jpg" %}" style="width:192px; height:256px;"> </td>
+    </div>
+    <div class="large-2 medium-4 small-8 card-info column">
+      <p>Daisy Chain</p>
+      <td> <img src="{% static "/images/daisy-chain.jpg" %}" style="width:256px; height:256px;" class="center"> </td>
+    </div>
+    <div class="large-2 medium-4 small-8 card-info column">
+      <p>Crash Pad</p>
+      <td> <img src="{% static "/images/crash-pad.jpg" %}" style="width:256px; height:256px;" class="center"> </td>
+    </div>
+    <div class="large-2 medium-4 small-8 card-info column">
+      <p>Ascender</p>
+      <td> <img src="{% static "/images/ascender.png" %}" style="width:256px; height:256px;" class="center"> </td>
     </div>
   </div>
 </div>
-
+</body>
 {% endblock %}
