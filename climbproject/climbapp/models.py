@@ -2,11 +2,6 @@ from django.db import models
 from django import forms
 from django.contrib.auth.models import User
 
-# MY_CHOICES = ((1, 'Indoor'),
-#                (2, 'Outdoor'))
-CHOICES=[('1','Indoor'),
-     ('2','Outdoor')]
-
 # Create your models here.
 class ClimbModel(models.Model):
     climb = models.CharField(max_length=240)

@@ -17,6 +17,11 @@ class ClimbForm(forms.Form):
         required=False
     )
 
+    # CHOICES = ((0, 'Indoor'), (1, 'Outdoor'))
+    # outdoor_bool = forms.TypedChoiceField(
+    #     choices=CHOICES, widget=forms.RadioSelect, coerce=int
+    #     )
+
 class CommentForm(forms.Form):
     comment = forms.CharField(
         label='Comment', max_length=240

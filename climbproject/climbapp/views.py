@@ -23,7 +23,6 @@ def index(request):
                     climb = form_instance.cleaned_data["climb"],
                     difficulty = form_instance.cleaned_data["difficulty"],
 
-                    # in_or_out = form_instance.cleaned_data["in_or_out"],
                     outdoor_bool = form_instance.cleaned_data["outdoor_bool"],
 
                     author = request.user
@@ -98,12 +97,6 @@ def information(request):
         }
     return render(request, "information/information.html", context=context)
 
-# def indoor(request):
-#     context = {
-#         "title": "Indoor Climbing",
-#         }
-#     return render(request, "information/indoor.html", context=context)
-
 def outdoor(request):
     context = {
         "title": "Outdoor Climbing",
@@ -122,20 +115,6 @@ def live_chat(request):
             "title": "Live Chat",
             }
         return render(request, "live_chat.html", context=context)
-
-# Real time chat System
-# def chat_room(request, label):
-#     # If the room with the given label doesn't exist, automatically create it
-#     # upon first visit (a la etherpad).
-#     room, created = Room.objects.get_or_create(label=label)
-#
-#     # We want to show the last 50 messages, ordered most-recent-last
-#     messages = reversed(room.messages.order_by('-timestamp')[:50])
-#
-#     return render(request, "chat/room.html", {
-#         'room': room,
-#         'messages': messages,
-#     })
 
 def rest_climb(request):
     if not request.user.is_authenticated:

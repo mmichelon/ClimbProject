@@ -3,9 +3,19 @@ $(document).foundation()
 //foundation nav bar
 $("[data-menu-underline-from-center] a").addClass("underline-from-center");
 
-<script>
-function myFunction(name,job) {
+// function myFunction(name,job) {
+//     document.getElementById("demo").innerHTML =
+//     "Welcome " + name + ", the " + job + ".";
+// }
+
+function inOrOut(boolValCheck) {
+  if(boolValCheck == true){
     document.getElementById("demo").innerHTML =
-    "Welcome " + name + ", the " + job + ".";
+    "Indoor"
+    // document.getElementById("demo").innerHTML =
+    // "Welcome " + name + ", the " + job + ".";
+  }else{
+    document.getElementById("demo").innerHTML =
+    "Outdoor"
+  }
 }
-</script>

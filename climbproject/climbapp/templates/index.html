@@ -20,18 +20,6 @@
 {% endif %}
 
 {% if user.is_authenticated %}
-
-<button onclick="myFunction('Harry Potter','Wizard')">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-function myFunction(name,job) {
-    document.getElementById("demo").innerHTML =
-    "Welcome " + name + ", the " + job + ".";
-}
-</script>
-
 <div class="grid-container">
   <div class="grid-x grid-padding-x">
       <div class="large-12 cell">
@@ -48,10 +36,7 @@ function myFunction(name,job) {
               <br>
               &emsp;
 
-
-              <!-- Check if Outdoor Climbing {{ todo.outdoor_bool }} -->
-              <p id="demo"></p>
-
+              Outdoor Climbing? {{ todo.outdoor_bool }}
               &emsp;
               &emsp;
               <br>
@@ -84,6 +69,7 @@ function myFunction(name,job) {
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.js"></script>
 <script src="{% static "js/my_vue.js" %}"></script>
+<script src="{% static "js/app.js" %}"></script>
 {% endif %}
 
 
