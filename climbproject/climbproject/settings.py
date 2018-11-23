@@ -131,9 +131,18 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #Real Time Chat system
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'asgiref.inmemory.ChannelLayer',
+#         'ROUTING': 'django_channels.routing.channel_routing',
+#     },
+# }
+
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'asgiref.inmemory.ChannelLayer',
-        'ROUTING': 'django_channels.routing.channel_routing',
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("redis://redis:6379/1", 6379)],
+        },
     },
 }

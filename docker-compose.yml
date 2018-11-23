@@ -9,3 +9,35 @@ services:
     ports:
        - 8000:8000
     command: python /code/climbproject/manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - redis
+    links:
+      - redis
+
+  redis:
+    image: redis
+    command: redis-server
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    expose:
+      - "54090"
+
+  # worker_channels:
+  #   build: .
+  #   command: python manage.py runworker
+  #   volumes:
+  #     - .:/code
+  #   links:
+  #     - redis
+  #
+  # channels:
+  #   build: .
+  #   command: daphne -b 0.0.0.0 -p 8001 asgi:channel_layer
+  #   volumes:
+  #     - .:/code
+  #   ports:
+  #     - "8001:8001"
+  #   links:
+  #     - redis
