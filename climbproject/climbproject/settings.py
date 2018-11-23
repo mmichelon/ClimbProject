@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'climbapp',
-    # 'channels',
+    'channels',
+
+    # 'rest_framework',
+    # 'rest_framework.authtoken',
+    # 'djoser',
 ]
 
 MIDDLEWARE = [
@@ -73,7 +77,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'climbproject.wsgi.application'
 
-ASGI_APPLICATION = "climbproject.routing.application"
+ASGI_APPLICATION = 'climbproject.routing.application'
 
 
 

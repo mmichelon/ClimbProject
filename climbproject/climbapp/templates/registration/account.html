@@ -1,14 +1,37 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Registration{% endblock %}
+{% block title %}Account{% endblock %}
 {% block content %}
+{% if user.is_authenticated %}
+
 <div class="card-info">
   <div class="card-info-content">
-    <h3 class="lead"> Rock Climbing is a rather straight forward sport, find a rock and climb up it. </h3>
-    <p> When a concept is so simple, structure is needed to make it a sport. </p>
-    <p> In climbing we use scales to access the difficulty of a route/climb. </p>
-    <p> <img src="{% static "/images/bucket.jpeg" %}" style="width:256px; height:256px;"> </p>
+    <h2>User Name: {{ user.get_username }}</h2>
   </div>
+
+{% if user.is_authenticated %}
+{% if user.get_username == user.get_username %}
+<div class="grid-container">
+  <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <h3><u>Posts: </h3>
+      </div>
+      </div>
+    </div>
 </div>
+{% endif %}</u>
+{% endif %}
+
+
+</div>
+{% endif %}
+{% if user.is_authenticated %}
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="{% static "js/my_vue.js" %}"></script>
+<script src="{% static "js/app.js" %}"></script>
+{% endif %}
+
 {% endblock %}

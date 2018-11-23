@@ -68,9 +68,9 @@
 
 {% endblock %}
 
- {% block scripts %}
+{% block scripts %}
 
- {% if user.is_authenticated %}
+{% if user.is_authenticated %}
 <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.js"></script>

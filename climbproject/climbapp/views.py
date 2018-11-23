@@ -6,8 +6,11 @@ from django.contrib.auth import logout
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
+# Real Time chat
+from django.utils.safestring import mark_safe
+import json
+
 # Create your views here.
-#from django.http import HttpResponse
 from . import models
 from . import forms
 
@@ -85,7 +88,15 @@ def register(request):
         }
     return render(request, "registration/register.html", context=context)
 
+@login_required
 def account(request):
+    # model = models.ClimbModel.objects.all()
+    # template_name = 'account.html'
+    # context_object_name = 'all_climbs_by_user'
+    #
+    # def get_queryset(self):
+    #     return Announce.objects.filter(owner=self.kwargs['pk'])
+
     context = {
         "title": "Account",
         }
@@ -109,12 +120,12 @@ def equipment(request):
         }
     return render(request, "information/equipment.html", context=context)
 
-def live_chat(request):
-    if request.user.is_authenticated:
-        context = {
-            "title": "Live Chat",
-            }
-        return render(request, "live_chat.html", context=context)
+# def live_chat(request):
+#     if request.user.is_authenticated:
+#         context = {
+#             "title": "Live Chat",
+#             }
+#         return render(request, "live_chat.html", context=context)
 
 def rest_climb(request):
     if not request.user.is_authenticated:
@@ -148,3 +159,26 @@ def rest_climb(request):
         return JsonResponse({"climbs": list_of_climbs})
     else:
         return HttpResponse("Invalid HTTP Method")
+
+
+# Real Time chat
+# def chat_room(request, label):
+#     # If the room with the given label doesn't exist, automatically create it
+#     # upon first visit (a la etherpad).
+#     room, created = Room.objects.get_or_create(label=label)
+#
+#     # We want to show the last 50 messages, ordered most-recent-last
+#     messages = reversed(room.messages.order_by('-timestamp')[:50])
+#
+#     return render(request, "chat/room.html", {
+#         'room': room,
+#         'messages': messages,
+#     })
+
+def live_chat(request):
+    return render(request, 'chat/live_chat.html', {})
+
+def room(request, room_name):
+    return render(request, 'chat/room.html', {
+        'room_name_json': mark_safe(json.dumps(room_name))
+    })

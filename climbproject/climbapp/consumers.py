@@ -5,7 +5,7 @@
 #     Group('chat').add(message.reply_channel)
 #
 #
-# def ws_echo(message):
-#     Group('chat').send({
-#         'text': message.content['text'],
-#     })
+def ws_echo(message):
+    Group('chat').send({
+        'text': message.content['text'],
+    })
