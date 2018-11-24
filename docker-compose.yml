@@ -13,31 +13,10 @@ services:
       - redis
     links:
       - redis
-
   redis:
     image: redis
-    command: redis-server
-    ports:
-      - '6379:6379'
+    command: redis-server /usr/local/etc/redis/redis.conf
     volumes:
       - ./redis.conf:/usr/local/etc/redis/redis.conf
     expose:
-      - "54090"
-
-  # worker_channels:
-  #   build: .
-  #   command: python manage.py runworker
-  #   volumes:
-  #     - .:/code
-  #   links:
-  #     - redis
-  #
-  # channels:
-  #   build: .
-  #   command: daphne -b 0.0.0.0 -p 8001 asgi:channel_layer
-  #   volumes:
-  #     - .:/code
-  #   ports:
-  #     - "8001:8001"
-  #   links:
-  #     - redis
+      - "6379"
