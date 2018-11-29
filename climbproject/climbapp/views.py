@@ -120,13 +120,6 @@ def equipment(request):
         }
     return render(request, "information/equipment.html", context=context)
 
-# def live_chat(request):
-#     if request.user.is_authenticated:
-#         context = {
-#             "title": "Live Chat",
-#             }
-#         return render(request, "live_chat.html", context=context)
-
 def rest_climb(request):
     if not request.user.is_authenticated:
         return JsonResponse({"climbs":[]})
@@ -140,6 +133,12 @@ def rest_climb(request):
                 "difficulty":item.difficulty,
 
                 "outdoor_bool":item.outdoor_bool,
+                # "outdoor_bool":"indoor",
+
+                # if item.outdoor_bool == 'true':
+                #     "outdoor_bool":"Outdoor",
+                # else:
+                #     "outdoor_bool":"Indoor",
 
                 "author":item.author.username,
                 "id":item.id,

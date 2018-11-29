@@ -22,7 +22,6 @@
               <li><a href="/information/">Climbing Basics</a></li>
               <li><a href="/information/equipment">Equipment</a></li>
               <li><a href="/information/outdoor">Outdoor Climbing</a></li>
-              <!-- <li><a href="/information/indoor">Indoor Climbing</a></li> -->
             </ul>
           </li>
         </ul>
@@ -30,9 +29,10 @@
       <div class="top-bar-right">
         <ul class="menu">
           {% if user.is_authenticated %}
-          <!-- <li><a href="/accounts/">{{ user.username }}</a></li> -->
-          <li><a href="/chat">Live Chat</a></li>
-          <li><a href="/account/">Account</a></li>
+          <li> <a href="/chat">Live Chat</a></li>
+          <li> <a href="/account/"> Account: {{ user.get_username }}</a></li>
+
+          <!-- <li><a href="/account/">Account</a></li> -->
           <li><a href="/logout/">Logout</a></li>
           {% else %}
            <!-- <li><a href="/register/">Register</a></li> -->
