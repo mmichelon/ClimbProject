@@ -90,12 +90,7 @@ def register(request):
 
 @login_required
 def account(request):
-    # model = models.ClimbModel.objects.all()
-    # template_name = 'account.html'
-    # context_object_name = 'all_climbs_by_user'
-    #
-    # def get_queryset(self):
-    #     return Announce.objects.filter(owner=self.kwargs['pk'])
+    climbs_by_user = Climbs.objects.filter(user=request.user)
 
     context = {
         "title": "Account",

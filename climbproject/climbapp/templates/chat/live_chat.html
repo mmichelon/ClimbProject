@@ -7,7 +7,7 @@
     <meta charset="utf-8"/>
     <title>Chat Rooms</title>
 </head>
-<body>
+<body class="grey_bg">
 
     What chat room would you like to enter?<br/>
     <input id="room-name-input" type="text" pattern=".{6,}" size="100"/><br/>
@@ -15,20 +15,7 @@
     <div class="card-info">
       Open Rooms:
     </div>
-
-    <script>
-        document.querySelector('#room-name-input').focus();
-        document.querySelector('#room-name-input').onkeyup = function(e) {
-            if (e.keyCode === 13) {  // enter, return
-                document.querySelector('#room-name-submit').click();
-            }
-        };
-
-        document.querySelector('#room-name-submit').onclick = function(e) {
-            var roomName = document.querySelector('#room-name-input').value;
-            window.location.pathname = '/chat/' + roomName + '/';
-        };
-    </script>
 </body>
+<script src="{% static "js/chat.js" %}"> </script>
 
 {% endblock %}

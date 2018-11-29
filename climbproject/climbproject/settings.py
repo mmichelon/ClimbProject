@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'climbapp',
     'channels',
+    # 'channels_presence',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +87,7 @@ DATABASES = {
         'TEST': {
             'NAME': os.path.join(BASE_DIR, 'db_test.sqlite3')
         }
-        
+
     }
 }
 
