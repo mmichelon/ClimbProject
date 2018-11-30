@@ -13,7 +13,7 @@ class ClimbForm(forms.Form):
     )
 
     outdoor_bool = forms.BooleanField(
-        label="Outdoor Climbing?",
+        label="Outdoor Climbing? Check for yes",
         required=False
     )
 

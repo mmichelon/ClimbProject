@@ -43,22 +43,8 @@
                 <br>
                 &emsp;
 
-                <!-- Outdoor Climbing? {{ todo.outdoor_bool }} -->
-                <p id="in-out">{{ todo.outdoor_bool }}</p>
-
-                <!-- <p>{{ todo.outdoor_bool }}</p> -->
-
-                <!-- {% endverbatim %}
-                {% if 'todo.outdoor_bool' == 'todo.outdoor_bool' %}
-                  <br>
-                  &emsp;
-                  Outdoor Climbing
-                {% else %}
-                  <br>
-                  &emsp;
-                  Indoor Climbing
-                {% endif %}
-                {% verbatim %} -->
+                <p v-if="todo.outdoor_bool">Outdoor Climbing</p>
+                <p v-else>Indoor Climbing</p>
 
               </div>
               &emsp;
@@ -94,15 +80,6 @@
 
 {% if user.is_authenticated %}
 <!-- development version, includes helpful console warnings -->
-<script>
-  var type;
-  if (document.getElementById("in-out").innerHTML == 'true') {
-      type = "Outdoor Climbing";
-  } else {
-      type = "Indoor Climbing";
-  }
-  document.getElementById("in-out").innerHTML = type;
-</script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.js"></script>
 <script src="{% static "js/my_vue.js" %}"></script>
