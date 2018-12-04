@@ -31,22 +31,9 @@
                 &emsp;
 
                 <!-- Outdoor Climbing? {{ todo.outdoor_bool }} -->
-                <p id="in-out">{{ todo.outdoor_bool }}</p>
+                <p v-if="todo.outdoor_bool">Outdoor Climbing</p>
+                <p v-else>Indoor Climbing</p>
                 &emsp;
-
-                <!-- <p>{{ todo.outdoor_bool }}</p> -->
-
-                <!-- {% endverbatim %}
-                {% if 'todo.outdoor_bool' == 'todo.outdoor_bool' %}
-                  <br>
-                  &emsp;
-                  Outdoor Climbing
-                {% else %}
-                  <br>
-                  &emsp;
-                  Indoor Climbing
-                {% endif %}
-                {% verbatim %} -->
 
               </div>
               &emsp;

@@ -25,9 +25,7 @@ def index(request):
                 climb = models.ClimbModel(
                     climb = form_instance.cleaned_data["climb"],
                     difficulty = form_instance.cleaned_data["difficulty"],
-
                     outdoor_bool = form_instance.cleaned_data["outdoor_bool"],
-
                     author = request.user
                 )
                 climb.save()
@@ -90,7 +88,9 @@ def register(request):
 
 @login_required
 def account(request):
-    climbs_by_user = Climbs.objects.filter(user=request.user)
+    # currentUserId = request.user.id
+    currentUserId = models.User.objects.get(id=request.user.id)
+    userClimbs = models.ClimbModel.objects.filter(author=currentUserId.username)
 
     context = {
         "title": "Account",
@@ -126,15 +126,7 @@ def rest_climb(request):
             add_to_list = {
                 "climb":item.climb,
                 "difficulty":item.difficulty,
-
                 "outdoor_bool":item.outdoor_bool,
-                # "outdoor_bool":"indoor",
-
-                # if item.outdoor_bool == 'true':
-                #     "outdoor_bool":"Outdoor",
-                # else:
-                #     "outdoor_bool":"Indoor",
-
                 "author":item.author.username,
                 "id":item.id,
                 "created_on":item.creation_date,

@@ -60,6 +60,16 @@
               Climbed by {{ todo.author }} on {{ todo.created_on }}
 
               <br>
+
+
+              <!-- <form action="/comment/{{ climb_id }}/" method="post">
+                  {% csrf_token %}
+                  <h4 class="text-center">Comment</h4>
+                  {{ form_instance }}
+                  <input type="submit" class="button expanded" value="Comment" />
+              </form> -->
+
+
               <h3><u>Comments</u></h3>
               <div class="card-info" v-for="comm in todo.comments">
                 {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
