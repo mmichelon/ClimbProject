@@ -12,15 +12,13 @@ class ClimbForm(forms.Form):
         label='Difficulty', max_length=10
     )
 
-    outdoor_bool = forms.BooleanField(
-        label="Outdoor Climbing? Check for yes",
-        required=False
-    )
-
-    # CHOICES = ((0, 'Indoor'), (1, 'Outdoor'))
-    # outdoor_bool = forms.TypedChoiceField(
-    #     choices=CHOICES, widget=forms.RadioSelect, coerce=int
-    #     )
+    CHOICES = ((0, 'Indoor'), (1, 'Outdoor'))
+    outdoor_bool = forms.TypedChoiceField(
+        choices=CHOICES, widget=forms.RadioSelect, coerce=int
+        )
+    climb_notes = forms.CharField(
+        label='Notes:', max_length=240
+        )
 
 class CommentForm(forms.Form):
     comment = forms.CharField(

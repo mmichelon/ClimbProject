@@ -7,10 +7,10 @@
     <meta charset="utf-8"/>
     <title>Chat Room</title>
 </head>
-<body>
+<body class="elcap-bg">
   <h1> Chat Room: {{ room_name_json }} </h1>
   <div class="grid-container">
-    <textarea id="chat-log" cols="100" rows="20" readonly></textarea><br/>
+    <textarea class="opacity-item"id="chat-log" cols="100" rows="20" readonly></textarea><br/>
     <input id="chat-message-input" type="text" size="100"/><br/>
     <input id="chat-message-submit" type="button" value="Send"/>
   </div>
@@ -44,7 +44,7 @@
         var messageInputDom = document.querySelector('#chat-message-input');
         var message = messageInputDom.value;
         chatSocket.send(JSON.stringify({
-            "message": message + " --" + "{{ user.get_username }}"
+            "message": "{{ user.get_username }}" + ": " + message
             // 'message': message
         }));
 

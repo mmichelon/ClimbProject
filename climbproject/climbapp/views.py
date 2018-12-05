@@ -26,6 +26,8 @@ def index(request):
                     climb = form_instance.cleaned_data["climb"],
                     difficulty = form_instance.cleaned_data["difficulty"],
                     outdoor_bool = form_instance.cleaned_data["outdoor_bool"],
+
+                    climb_notes = form_instance.cleaned_data["climb_notes"],
                     author = request.user
                 )
                 climb.save()
@@ -127,6 +129,7 @@ def rest_climb(request):
                 "climb":item.climb,
                 "difficulty":item.difficulty,
                 "outdoor_bool":item.outdoor_bool,
+                "climb_notes":item.climb_notes,
                 "author":item.author.username,
                 "id":item.id,
                 "created_on":item.creation_date,

@@ -9,6 +9,14 @@
 body.information {
   background-image: url("https://media.idownloadblog.com/wp-content/uploads/2015/06/Wallpaper-OS-X-El-Capitan-iPhone-6-Plus.jpg");
 }
+.halfdome-bg{
+  background-image: url("https://s.hdnux.com/photos/73/40/05/15597904/5/920x920.jpg");
+  /* background-size: cover; */
+}
+.climb-bg{
+  background-image: url("https://image.freepik.com/free-vector/climbing-mountain-backlit-background_1048-1039.jpg");
+  background-size: cover;
+}
 .elcap-bg {
   background-image: url("http://ultimatecycler.us/wp-content/uploads/2018/07/el-capitan-wallpapers-for-ipad-7.jpg");
   background-size: cover;
