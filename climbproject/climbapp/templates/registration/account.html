@@ -4,14 +4,53 @@
 {% block title %}Account{% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
-
-<div class="card-info">
-  <div class="card-info-content">
-    <h2>User Name: {{ user.get_username }}</h2>
+<body class="grey-bg">
+  <div>
+    <h2>Climbs by User: {{ user.get_username }}</h2>
   </div>
 
+      <div class="div-pad" id="app-5">
+            <div class="card-info" v-for="todo in todos.climbs">
+              {% verbatim %}
+              <div class="top-pad">
+                Name/Location: {{ todo.climb }}
+              </div>
+              <div class="div-pad">
+                <br>
+                <div class="large-offset-1 medium-offset-1 small-offset-1">
+                  Difficulty: {{ todo.difficulty }}
+                  <br>
+                  <br>
+                  <p v-if="todo.outdoor_bool">Outdoor Climbing</p>
+                  <p v-else>Indoor Climbing</p>
+                </div>
+                <br>
+                Notes: {{ todo.climb_notes }}
+                <br>
+                Climbed by {{ todo.author }} on {{ todo.created_on }}
+              </div>
 
-</div>
+
+              <br>
+
+              <div class="div-pad">
+                  <form v-bind:action="'/comment/'+ todo.id+'/'" method="post">
+                      {% endverbatim %}
+                      {% csrf_token %}
+                      {{ comm_form }}
+                      {% verbatim %}
+                      <input type="submit" class="button expanded div-pad" value="Comment">
+                  </form>
+              </div>
+
+              <h3 class="div-pad"><u>Comments</u></h3>
+              <div class="box-pad grid-container div-pad" v-for="comm in todo.comments">
+                {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
+              </div>
+            </div>
+          {% endverbatim %}
+        </div>
+</body>
 {% endif %}
 
 
@@ -20,7 +59,7 @@
 <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.js"></script>
-<script src="{% static "js/my_vue.js" %}"></script>
+<script src="{% static "js/my_vue1.js" %}"></script>
 <script src="{% static "js/app.js" %}"></script>
 {% endif %}
 

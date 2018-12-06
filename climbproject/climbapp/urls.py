@@ -10,6 +10,8 @@ app_name = 'climbapp'
 urlpatterns = [
     path('', views.index),
     path('climbs/', views.rest_climb),
+    path('climbs/me', views.rest_climb_user),
+
     path('information/', views.information), #add information about climbing page
     path('information/outdoor', views.outdoor), #add information about climbing page
     path('information/equipment', views.equipment),
