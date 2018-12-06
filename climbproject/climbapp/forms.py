@@ -16,6 +16,7 @@ class ClimbForm(forms.Form):
     outdoor_bool = forms.TypedChoiceField(
         choices=CHOICES, widget=forms.RadioSelect, coerce=int
         )
+        
     climb_notes = forms.CharField(
         label='Notes:', max_length=240
         )

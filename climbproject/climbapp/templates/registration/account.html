@@ -10,72 +10,13 @@
     <h2>User Name: {{ user.get_username }}</h2>
   </div>
 
-{% if user.is_authenticated %}
-<div class="grid-container">
-  <div class="grid-x grid-padding-x">
-      <div class="large-12 cell">
-        <h3><u>Your Posts: </u></h3>
-      </div>
 
-      <div class="large-8 medium-8 small-12 large-offset-1 medium-offset-1" id="app-4">
-            <div class="card-info" v-for="todo in todos.climbs">
-              {% verbatim %}
-              <div cell>
-                Name/Location: {{ todo.climb }}
-              </div>
-              <div>
-                <br>
-                &emsp;
-                Difficulty: {{ todo.difficulty }}
-                <br>
-                &emsp;
-
-                <!-- Outdoor Climbing? {{ todo.outdoor_bool }} -->
-                <p v-if="todo.outdoor_bool">Outdoor Climbing</p>
-                <p v-else>Indoor Climbing</p>
-                &emsp;
-
-              </div>
-              &emsp;
-              &emsp;
-              <br>
-
-              <div class="card-info comment-div button">
-                <a v-bind:href="'/comment/'+ todo.id+'/'">Comment</a>
-              </div>
-              &emsp;
-              &emsp;
-
-              Climbed by {{ todo.author }} on {{ todo.created_on }}
-
-              <br>
-              <h3><u>Comments</u></h3>
-              <div class="card-info" v-for="comm in todo.comments">
-                {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
-              </div>
-            </div>
-          {% endverbatim %}
-        </div>
-
-
-      </div>
-    </div>
 </div>
 {% endif %}
 
 
 </div>
-{% endif %}
 {% if user.is_authenticated %}
-<script>
-  var type;
-  if (document.getElementById("in-out").innerHTML == 'true') {
-      type = "Outdoor Climbing";
-  } else {
-      type = "Indoor Climbing";
-  }
-  document.getElementById("in-out").innerHTML = type;
-</script>
 <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.js"></script>

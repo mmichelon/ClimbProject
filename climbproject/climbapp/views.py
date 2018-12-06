@@ -26,7 +26,6 @@ def index(request):
                     climb = form_instance.cleaned_data["climb"],
                     difficulty = form_instance.cleaned_data["difficulty"],
                     outdoor_bool = form_instance.cleaned_data["outdoor_bool"],
-
                     climb_notes = form_instance.cleaned_data["climb_notes"],
                     author = request.user
                 )
@@ -91,8 +90,8 @@ def register(request):
 @login_required
 def account(request):
     # currentUserId = request.user.id
-    currentUserId = models.User.objects.get(id=request.user.id)
-    userClimbs = models.ClimbModel.objects.filter(author=currentUserId.username)
+    # currentUserId = models.User.objects.get(id=request.user.id)
+    # userClimbs = models.ClimbModel.objects.filter(author=currentUserId.username)
 
     context = {
         "title": "Account",

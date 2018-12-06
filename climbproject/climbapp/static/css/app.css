@@ -6,12 +6,32 @@
     width: 50%;
 }
 
+.box-pad{
+  border-style: groove;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.top-pad{
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.div-pad{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 body.information {
   background-image: url("https://media.idownloadblog.com/wp-content/uploads/2015/06/Wallpaper-OS-X-El-Capitan-iPhone-6-Plus.jpg");
 }
 .halfdome-bg{
   background-image: url("https://s.hdnux.com/photos/73/40/05/15597904/5/920x920.jpg");
-  /* background-size: cover; */
+  background-size: cover;
+}
+.castle-creigs-bg{
+  background-size: cover;
+  background-image: url("http://famouswonders.com/wp-content/uploads/2009/12/The-Todra-Gorge.jpg")
 }
 .climb-bg{
   background-image: url("https://image.freepik.com/free-vector/climbing-mountain-backlit-background_1048-1039.jpg");

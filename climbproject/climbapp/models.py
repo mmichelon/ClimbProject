@@ -7,9 +7,7 @@ class ClimbModel(models.Model):
     climb = models.CharField(max_length=240)
     difficulty = models.CharField(max_length=10)
     outdoor_bool = models.BooleanField()
-
     climb_notes = models.CharField(max_length=240)
-    
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     creation_date = models.DateTimeField(auto_now_add=True)
 
