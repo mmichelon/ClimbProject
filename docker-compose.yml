@@ -23,10 +23,10 @@ services:
       - ./redis.conf:/usr/local/etc/redis/redis.conf
     expose:
       - "6379"
-      
+
   nginx:
     restart: always
-    build: ./nginx/
+    build: ./climbproject/nginx/
     depends_on:
       - web
     ports:
