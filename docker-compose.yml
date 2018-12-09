@@ -3,11 +3,14 @@ version: '3'
 
 services:
   web:
+    restart: always
     build: .
     volumes:
        - .:/code
-    ports:
-       - 8000:8000
+    # ports:
+       # - 8000:8000
+    expose:
+      - "8000"
     command: python /code/climbproject/manage.py runserver 0.0.0.0:8000
     depends_on:
       - redis
@@ -20,3 +23,16 @@ services:
       - ./redis.conf:/usr/local/etc/redis/redis.conf
     expose:
       - "6379"
+      
+  nginx:
+    restart: always
+    build: ./nginx/
+    depends_on:
+      - web
+    ports:
+      - "80:80"
+    #  - "443:443"
+#     volumes:
+#        - ./code/static:/static
+    links:
+      - web:web
