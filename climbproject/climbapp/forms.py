@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 
 class ClimbForm(forms.Form):
-
     climb = forms.CharField(
         label='Name/Location', max_length=240
         )
@@ -16,10 +15,15 @@ class ClimbForm(forms.Form):
     outdoor_bool = forms.TypedChoiceField(
         choices=CHOICES, widget=forms.RadioSelect, coerce=int
         )
-        
+
     climb_notes = forms.CharField(
-        label='Notes:', max_length=240
+        label='Notes:', max_length=240, required=False
         )
+
+class searchForm(forms.Form):
+    climbType = forms.CharField(
+        label="Find a climb", max_length=50
+    )
 
 class CommentForm(forms.Form):
     comment = forms.CharField(

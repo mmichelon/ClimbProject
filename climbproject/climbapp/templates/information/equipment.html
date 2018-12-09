@@ -5,25 +5,29 @@
 <body class="grey-bg">
 <h2> Climbing Equipment </h2>
 <div class="grid-container indoor-bg">
-  <div class="large-2 medium-4 small-8 card-info outdoor">
+  <div class="card-info outdoor div-pad">
     <h2>Indoor Climbing Equipment</h2>
     <p>Essential Bouldering gear for Indoor and Outdoor climbing.</p>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Climbing Shoe</p>
+    <div class="card-info column">
+      <h4>Climbing Shoe</h4>
+      <p>These fit smaller than normal shoes, with full rubber soles and toes. Important for using small footholds.</p>
       <td> <img src="{% static "/images/climbing_shoe.jpg" %}" style="width:256px; height:256px;" class="center"> </td>
     </div>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Chalk Bag/Boulder Bag</p>
+    <div class="card-info column div-pad">
+      <h4>Chalk Bag/Boulder Bag</h4>
+      <p>Chalk is used to dry your hands allowing for better ability to hold onto more difficult holds.</p>
       <td> <img src="{% static "/images/chalk_bag.jpg" %}" style="width:192px; height:256px;"> </td>
-      <td> <img src="{% static "/images/chalk_bag.jpg" %}" style="width:192px; height:256px;"> </td>
+      <td> <img src="{% static "/images/boulder_bag.jpeg" %}" style="width:192px; height:256px;"> </td>
     </div>
-      <p>Toprope/Lead climbing indoors</p>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Climbing Harness</p>
+    <h3>Toprope/lead climbing</h3>
+    <div class="card-info column">
+      <h4>Climbing Harness</h4>
+      <p>Harnesses allow for safe free climbing. The climber ties into the front of the harness, while the belayer is clipped in the other side.</p>
       <td> <img src="{% static "/images/harness.jpg" %}" style="width:256px; height:256px;" class="center"> </td>
     </div>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Belay Device Or Gregory</p>
+    <div class="card-info column">
+      <h4>Belay Device Or Gregory</h4>
+      <p>A person will clip the belay device to their harness. Once the climber is on the wall this device allows you to catch them if they fall, and lower them.</p>
       <td> <img src="{% static "/images/baley.jpeg" %}" style="width:192px; height:256px;"> </td>
       <td> <img src="{% static "/images/gregory.jpg" %}" style="width:192px; height:256px;"> </td>
     </div>
@@ -31,42 +35,52 @@
 </div>
 
 <div class="grid-container outdoor elcap-bg">
-  <div class="large-4 medium-4 small-8 card-info outdoor"">
+  <div class="large-4 medium-4 small-8 card-info outdoor div-pad">
     <h2>Outdoor Climbing Equipment</h2>
     <p>All indoor climbing equipment is also used outdoors, however additional gear is needed to climb safley outdoors.</p>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Climbing Helmet</p>
+    <div class="card-info column">
+      <h4>Climbing Helmet</h4>
+      <p>Lightweight helmets to protect against falling rocks, and hitting your head when outdoor climbing.</p>
       <td> <img src="https://www.rei.com/content/dam/images/Expert%20Advice/2016/06/831117_Climbing_Helmet.jpg" style="width:256px; height:256px;" class="center"> </td>
     </div>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Carabiners</p>
+    <div class="card-info column">
+      <h4>Locking Carabiners</h4>
+      <p>Saftey equipment to connect other pieces of gear, be it harness to belay device, or harness to daisy chain.</p>
       <td> <img src="https://www.rei.com/content/dam/images/Expert%20Advice/2016/06/899072_Locking_Carabiner.jpg" %}" style="width:192px; height:256px;"> </td>
       <td> <img src="{% static "/images/carabinerAL.jpeg" %}" style="width:192px; height:256px;"> </td>
     </div>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Climbing Rope</p>
+    <div class="card-info column">
+      <h4>Climbing Rope</h4>
+      <p>A climber will attach this to their harness, and a belayer will addach the other end, the climber puts the rope through carabiners attached to either cams, nuts, or bolts.</p>
       <td> <img src="{% static "/images/rope.jpeg" %}" style="width:256px; height:256px;" class="center"> </td>
     </div>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Cam</p>
+    <div class="card-info column">
+      <h4>Cam</h4>
+      <div>
+        <p>A device placed into cracks or pockets so that pulling on the axle forces the cams to spread farther apart. This secures the climber if they call, and are easily removable.
+      </div>
       <td> <img src="{% static "/images/cam-bulk.jpg" %}" style="width:192px; height:256px;"> </td>
       <td> <img src="{% static "/images/cam-crack.jpg" %}" style="width:192px; height:256px;"> </td>
     </div>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Nut</p>
+    <div class="card-info column">
+      <h4>Nut</h4>
+      <p>A device placed in small cracks, that secure the climber to the wall. These are generally used when a cam is too large.</p>
       <td> <img src="{% static "/images/nuts-bulk.jpg" %}" style="width:192px; height:256px;"> </td>
       <td> <img src="{% static "/images/nut-crack.jpg" %}" style="width:192px; height:256px;"> </td>
     </div>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Daisy Chain</p>
+    <div class="card-info column">
+      <h4>Daisy Chain</h4>
+      <p>Used to either secure the belayer to the ground, or hold the climber off a bold or gear in order to place more gear or rest.</p>
       <td> <img src="{% static "/images/daisy-chain.jpg" %}" style="width:256px; height:256px;" class="center"> </td>
     </div>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Crash Pad</p>
+    <div class="card-info column">
+      <h4>Crash Pad</h4>
+      <p>In outdoor bouldering these are placed below the route in case the climber falls. Most climbing gyms have this built into their floor.</p>
       <td> <img src="{% static "/images/crash-pad.jpg" %}" style="width:256px; height:256px;" class="center"> </td>
     </div>
-    <div class="large-2 medium-4 small-8 card-info column">
-      <p>Ascender</p>
+    <div class="card-info column">
+      <h4>Ascender</h4>
+      <p>A divice used to go up a rope, this is usefull when carring equipment up a large multi-pitch climb. Also used in mountaineering on sleep slopes.</p>
       <td> <img src="{% static "/images/ascender.png" %}" style="width:256px; height:256px;" class="center"> </td>
     </div>
   </div>

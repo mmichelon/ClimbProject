@@ -5,10 +5,11 @@
 {% block content %}
 {% if user.is_authenticated %}
 <body class="grey-bg">
-  <div>
+  <div class="div-pad">
     <h2>Climbs by User: {{ user.get_username }}</h2>
   </div>
 
+    <div class="grid-container">
       <div class="div-pad" id="app-5">
             <div class="card-info" v-for="todo in todos.climbs">
               {% verbatim %}
@@ -29,17 +30,14 @@
                 <br>
                 Climbed by {{ todo.author }} on {{ todo.created_on }}
               </div>
-
-
               <br>
-
               <div class="div-pad">
                   <form v-bind:action="'/comment/'+ todo.id+'/'" method="post">
                       {% endverbatim %}
                       {% csrf_token %}
                       {{ comm_form }}
                       {% verbatim %}
-                      <input type="submit" class="button expanded div-pad" value="Comment">
+                      <input type="submit" class="button expanded div-pad" value="Comment" />
                   </form>
               </div>
 
@@ -50,6 +48,7 @@
             </div>
           {% endverbatim %}
         </div>
+      </div>
 </body>
 {% endif %}
 

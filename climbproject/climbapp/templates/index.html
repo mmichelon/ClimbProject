@@ -21,6 +21,21 @@
   </form>
 </div>
 
+<!-- {% endif %}
+<div>
+  <form action="/" method="post">
+    <div class="grid-x grid-padding-x">
+      <div class="large-4 medium-6 small-12 cell remove-dots">
+        {% csrf_token %}
+        {{ search_instance }}
+        <br>
+        <input name="search" type="submit" class="button" value="Search">
+      </div>
+    </div>
+  </form>
+</div>
+{% if user.is_authenticated %} -->
+
 {% endif %}
 
 {% if user.is_authenticated %}
