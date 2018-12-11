@@ -13,7 +13,7 @@ class ClimbForm(forms.Form):
 
     CHOICES = ((0, 'Indoor'), (1, 'Outdoor'))
     outdoor_bool = forms.TypedChoiceField(
-        choices=CHOICES, widget=forms.RadioSelect, coerce=int
+        label="Type", choices=CHOICES, widget=forms.RadioSelect, coerce=int
         )
 
     climb_notes = forms.CharField(
