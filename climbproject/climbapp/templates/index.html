@@ -55,9 +55,8 @@
               <div class="large-offset-1 medium-offset-1 small-offset-1">
                 <u>Difficulty:</u> {{ todo.difficulty }}
                 <br>
-                <p>Type: </p>
-                <p v-if="todo.outdoor_bool">Outdoor Climbing</p>
-                <p v-else>Indoor Climbing</p>
+                <p v-if="todo.outdoor_bool"><u>Type:</u> Outdoor Climbing</p>
+                <p v-else><u>Type:</u> Indoor Climbing</p>
               </div>
               <br>
               <u>Notes:</u> {{ todo.climb_notes }}
