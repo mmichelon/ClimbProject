@@ -5,6 +5,7 @@
   <!-- <div class="large-4 medium-4 small-12 cell"></div> -->
   <div class="large-4 medium-4 small-12 large-offset-4 medium-offset-4 cell">
     <h4 class="text-center">Login</h4>
+    <img src="{% static "/images/bucket.jpeg" %}"> 
     <form action="/login/" method="post">
         {% csrf_token %}
         {{ form.errors }}

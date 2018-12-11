@@ -33,6 +33,10 @@ body.information {
   background-image: url("https://s.hdnux.com/photos/73/40/05/15597904/5/920x920.jpg");
   background-size: cover;
 }
+.climbing-dawn-bg{
+  background-image: url("https://s3-us-west-2.amazonaws.com/hispotion-prod/wp-content/uploads/2016/06/mountain-climbing-wallpaper-2.jpg");
+  background-size: cover;
+}
 .castle-creigs-bg{
   background-size: cover;
   background-image: url("http://famouswonders.com/wp-content/uploads/2009/12/The-Todra-Gorge.jpg")
