@@ -48,21 +48,21 @@
           <div class="card-info" v-for="todo in todos.climbs">
             {% verbatim %}
             <div class="top-pad">
-              Name/Location: {{ todo.climb }}
+              <u>Name/Location: </u>{{ todo.climb }}
             </div>
             <div class="div-pad">
               <br>
               <div class="large-offset-1 medium-offset-1 small-offset-1">
-                Difficulty: {{ todo.difficulty }}
+                <u>Difficulty: </u>{{ todo.difficulty }}
                 <br>
                 <br>
                 <p v-if="todo.outdoor_bool">Outdoor Climbing</p>
                 <p v-else>Indoor Climbing</p>
               </div>
               <br>
-              Notes: {{ todo.climb_notes }}
+              <u>Notes: </u>{{ todo.climb_notes }}
               <br>
-              Climbed by {{ todo.author }} on {{ todo.created_on }}
+              <h4><u>Climbed by: </u></h4>{{ todo.author }} on {{ todo.created_on }}
             </div>
             <br>
             <div class="div-pad">
