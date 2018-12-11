@@ -77,7 +77,7 @@
 
             <h3 class="div-pad"><u>Comments</u></h3>
             <div class="box-pad grid-container div-pad" v-for="comm in todo.comments">
-              {{ comm.comment }} by {{ comm.author }} on {{ todo.created_on }}
+              {{ comm.comment }} <u>By: {{ comm.author }}</u>
             </div>
           </div>
         {% endverbatim %}
