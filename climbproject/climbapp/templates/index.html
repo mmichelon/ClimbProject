@@ -53,16 +53,16 @@
             <div class="div-pad">
               <br>
               <div class="large-offset-1 medium-offset-1 small-offset-1">
-                <u>Difficulty: </u>{{ todo.difficulty }}
-                <br>
+                <u>Difficulty:</u> {{ todo.difficulty }}
                 <br>
                 <p v-if="todo.outdoor_bool">Outdoor Climbing</p>
                 <p v-else>Indoor Climbing</p>
               </div>
               <br>
-              <u>Notes: </u>{{ todo.climb_notes }}
+              <u>Notes:</u> {{ todo.climb_notes }}
               <br>
-              <h4><u>Climbed by: </u></h4>{{ todo.author }} on {{ todo.created_on }}
+              <br>
+              <h5><u>Climbed by:</u></h5> {{ todo.author }} on {{ todo.created_on }}
             </div>
             <br>
             <div class="div-pad">
