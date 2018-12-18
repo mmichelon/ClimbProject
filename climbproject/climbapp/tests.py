@@ -12,16 +12,19 @@ class ClimbTestCase(TestCase):
         self.user = User.objects.create_user(
             username='bob', email='bob@mail.com', password='passwordbob')
         ClimbModel.objects.create(climb="lion", author=self.user)
-        ClimbModel.objects.create(climb="cat", author=self.user)
+        ClimbModel.objects.create(climb="everest", author=self.user, difficulty="easy", outdoor_bool=True, climb_notes="notes")
+        # ClimbModel.objects.create(climb="cat", author=self.user)
 
      def test_Climb_to_string(self):
         lion = ClimbModel.objects.get(climb="lion")
-        cat = ClimbModel.objects.get(climb="cat")
+        everest = ClimbModel.objects.get(climb="everest", difficulty="easy", outdoor_bool=True, climb_notes="notes")
         self.assertEqual(str(lion), 'lion')
-        self.assertEqual(str(cat), 'cat')
+        self.assertEqual(str(everest), 'everest')
+        self.assertEqual(everest, True)
         self.assertEqual(lion.author, self.user)
 
 
+#Was unable to get the django ghannels test to work, working on webpage
 class ChatTests(ChannelsLiveServerTestCase):
     serve_static = True  # emulate StaticLiveServerTestCase
 
